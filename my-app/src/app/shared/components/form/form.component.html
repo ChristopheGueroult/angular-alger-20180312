@@ -1,0 +1,22 @@
+<div class="container">
+  <form class="form" novalidate (ngSubmit)="process()" [formGroup]="form">
+
+    <div class="form-group">
+      <input type="text" class="form-control" placeholder="Nom et prénom" formControlName="name">
+    </div>
+
+    <div class="form-group">
+      <input type="text" class="form-control" placeholder="Ref. ex : 1234" formControlName="reference">
+    </div>
+
+    <div class="form-group">
+      <select class="form-control" formControlName="state">
+          <option *ngFor="let libelle of stateLibelles" [ngValue]="libelle">{{ libelle }}</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <button type="submit" class="btn btn-primary">Valider</button>
+    </div>
+  </form>
+</div>
